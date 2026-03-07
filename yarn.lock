@@ -4496,8 +4496,10 @@ __metadata:
     eslint-plugin-vue: "npm:^10.4.0"
     globals: "npm:^16.4.0"
     pinia: "npm:^3.0.1"
+    postcss: "npm:^8.5.8"
     quasar: "npm:^2.16.0"
     typescript: "npm:^5.9.2"
+    vite: "npm:^7.3.1"
     vite-plugin-checker: "npm:^0.11.0"
     vue: "npm:^3.5.22"
     vue-eslint-parser: "npm:^10.2.0"
@@ -4938,7 +4940,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.5.6":
+"postcss@npm:^8.5.6, postcss@npm:^8.5.8":
   version: 8.5.8
   resolution: "postcss@npm:8.5.8"
   dependencies:
@@ -6303,7 +6305,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^7.1.6":
+"vite@npm:^7.1.6, vite@npm:^7.3.1":
   version: 7.3.1
   resolution: "vite@npm:7.3.1"
   dependencies:
