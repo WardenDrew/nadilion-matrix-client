@@ -1,32 +1,26 @@
-# Nadilion Matrix Client (nadilion-matrix-client)
+# Nadilion Matrix Client
 
-Nadilion Matrix Project
+A cross platform matrix client being worked on for the Nadilion community
 
-## Install the dependencies
+## Contributing
+
+## Prerequisites
+Node.JS 24+
+Yarn 4+
+
+### Install the dependencies
 ```bash
 yarn
-# or
-npm install
 ```
 
 ### Start the app in development mode (hot-code reloading, error reporting, etc.)
 ```bash
-quasar dev
+yarn quasar dev
 ```
 
-
-### Lint the files
-```bash
-yarn lint
-# or
-npm run lint
-```
-
+Access at `http://localhost:9000/`
 
 ### Build the app for production
 ```bash
-quasar build
+yarn quasar build
 ```
-
-### Customize the configuration
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
