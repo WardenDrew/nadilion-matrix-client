@@ -1,15 +1,14 @@
 <template>
   <q-layout view="lHr LpR fFf">
-
     <q-header
+      v-if="renderHeader"
       bordered
       class="bg-dark text-white header-height"
       height-hint="50"
     >
-      <q-toolbar
-        class="q-pa-none header-height"
-      >
+      <q-toolbar class="q-pa-none header-height justify-between items-center">
         <q-btn
+          v-if="hasLeft"
           dense
           flat
           @click="toggleLeftDrawer"
@@ -21,37 +20,15 @@
           />
         </q-btn>
 
-        <q-toolbar-title
-          class="q-px-xs"
+        <div
+          v-if="hasHeader"
+          class="header-height flex-grow"
         >
-          Room Name
-        </q-toolbar-title>
+          <router-view name="header"/>
+        </div>
 
         <q-btn
-          flat
-          icon="mdi-gavel"
-          class="header-height"
-        />
-
-        <q-btn
-          flat
-          icon="mdi-image-multiple"
-          class="header-height"
-        />
-
-        <q-btn
-          flat
-          icon="mdi-pin"
-          class="header-height"
-        />
-
-        <q-btn
-          flat
-          icon="mdi-account-group"
-          class="header-height"
-        />
-
-        <q-btn
+          v-if="hasRight"
           dense
           flat
           @click="toggleRightDrawer"
@@ -63,34 +40,26 @@
           />
         </q-btn>
       </q-toolbar>
-
-
     </q-header>
 
     <q-drawer
+      v-if="hasLeft"
       v-model="leftDrawerOpen"
       show-if-above
       side="left"
       bordered
-      class="q-pa-sm"
     >
-      <span class="text-h5">Server Info</span>
-      <hr/>
-      <span class="text-h5">Optional Space Info</span>
-      <hr/>
-      <span class="text-h5">Rooms List</span>
+      <router-view name="left"/>
     </q-drawer>
 
     <q-drawer
+      v-if="hasRight"
       v-model="rightDrawerOpen"
       show-if-above
       side="right"
       bordered
-      class="q-pa-sm"
     >
-      <span class="text-h5">Your Account</span>
-      <hr/>
-      <span class="text-h5">Shortcuts</span>
+      <router-view name="right"/>
     </q-drawer>
 
     <q-page-container>
@@ -98,13 +67,14 @@
     </q-page-container>
 
     <q-footer
+      v-if="hasFooter"
       bordered
       class="bg-dark text-white footer-height"
     >
       <q-toolbar
         class="q-py-none footer-height"
       >
-        <span>Status Bar</span>
+        <router-view name="footer"/>
       </q-toolbar>
     </q-footer>
 
@@ -113,6 +83,15 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
+
+const hasHeader = computed(() => route.matched.some(r => r.components?.header));
+const hasFooter = computed(() => route.matched.some(r => r.components?.footer));
+const hasLeft = computed(() => route.matched.some(r => r.components?.left));
+const hasRight = computed(() => route.matched.some(r => r.components?.right));
+const renderHeader = computed(() => hasHeader.value || hasLeft.value || hasRight.value);
 
 const leftDrawerOpen = ref<boolean>(false);
 const rightDrawerOpen = ref<boolean>(false);

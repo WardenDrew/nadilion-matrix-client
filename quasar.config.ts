@@ -2,6 +2,7 @@
 // https://v2.quasar.dev/quasar-cli-vite/quasar-config-file
 
 import { defineConfig } from '#q-app/wrappers';
+import {fileURLToPath} from "node:url";
 
 export default defineConfig((/* ctx */) => {
   return {
@@ -64,7 +65,12 @@ export default defineConfig((/* ctx */) => {
 
       // extendViteConf (viteConf) {},
       // viteVuePluginOptions: {},
-      
+
+      alias: {
+        matrix: fileURLToPath(new URL('./src/matrix', import.meta.url)),
+        views: fileURLToPath(new URL('./src/views', import.meta.url)),
+      },
+
       vitePlugins: [
         ['vite-plugin-checker', {
           vueTsc: true,
@@ -78,8 +84,7 @@ export default defineConfig((/* ctx */) => {
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#devserver
     devServer: {
-      // https: true,
-      open: true // opens browser window automatically
+      open: false
     },
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#framework

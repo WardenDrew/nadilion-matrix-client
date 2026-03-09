@@ -1,4 +1,46 @@
-// app global css in SCSS form
+body {
+  font-size: 1rem;
+  line-height: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  line-height: normal;
+}
+
+h6 {
+  font-size: 1.10rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+hr {
+  margin: 0;
+  border-color: rgba(255,255,255,0.28);
+}
+
 .mirror-horizontal {
   transform: scaleX(-1);
+}
+
+.flex-grow {
+  flex-grow: 1;
 }
