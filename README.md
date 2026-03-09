@@ -4,6 +4,8 @@ A cross platform matrix client being worked on for the Nadilion community
 
 ## Contributing
 
+Generally avoid introducing new 3rd party dependencies without a compelling reason.
+
 ## Prerequisites
 Node.JS 24+
 Yarn 4+
