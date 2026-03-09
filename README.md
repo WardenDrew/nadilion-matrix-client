@@ -2,6 +2,11 @@
 
 A cross platform matrix client being worked on for the Nadilion community
 
+## Latest Screenshot
+2026.MAR.08
+![Latest Screenshot](docs/latest-screenshot.png)
+
+
 ## Contributing
 
 Generally avoid introducing new 3rd party dependencies without a compelling reason.
