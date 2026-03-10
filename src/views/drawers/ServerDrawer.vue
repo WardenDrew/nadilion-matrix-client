@@ -27,7 +27,9 @@ const homeserver = useHomeserverStore();
       <q-icon name="mdi-message-text" class="q-mr-sm"/>
       <span>Public Rooms</span>
     </div>
-    <hr class="q-my-sm"/>
+  </div>
+  <hr/>
+  <div class="q-pa-sm">
     <div class="row items-center">
       <q-icon name="mdi-message-text-lock-outline" class="q-mr-sm"/>
       <span>Your Private Rooms</span>
